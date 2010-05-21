@@ -7,7 +7,7 @@
 Summary:	Pango - Layout and render international text
 Name:		perl-Pango
 Version:	1.221
-Release:	1
+Release:	2
 License:	unknown
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/T/TS/TSCH/Pango-%{version}.tar.gz
@@ -57,7 +57,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/%{pdir}
 %{perl_vendorarch}/%{pdir}/*.pod
 %{perl_vendorarch}/%{pdir}/Cairo/*pod
+%{perl_vendorarch}/%{pdir}/Install/
 %dir %{perl_vendorarch}/%{pdir}/Cairo
+%dir %{perl_vendorarch}/%{pdir}/Install
 %dir %{perl_vendorarch}/auto/Pango/
 %{perl_vendorarch}/auto/Pango/*.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/%{pdir}/*.so
