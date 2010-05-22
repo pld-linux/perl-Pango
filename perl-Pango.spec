@@ -49,7 +49,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-cp -a examples $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+cp -a examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -63,7 +63,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/%{pdir}/Cairo
 %{perl_vendorarch}/%{pdir}/Cairo/*pod
 %{perl_vendorarch}/%{pdir}/Install
-%dir %{perl_vendorarch}/auto/Pango/
+%dir %{perl_vendorarch}/auto/Pango
 %{perl_vendorarch}/auto/Pango/*.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/%{pdir}/*.so
 %{_mandir}/man3/*
