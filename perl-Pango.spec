@@ -6,7 +6,7 @@
 Summary:	Pango - Layout and render international text
 Name:		perl-Pango
 Version:	1.221
-Release:	3
+Release:	4
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/T/TS/TSCH/Pango-%{version}.tar.gz
