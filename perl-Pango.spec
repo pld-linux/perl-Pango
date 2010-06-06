@@ -6,8 +6,8 @@
 Summary:	Pango - Layout and render international text
 Name:		perl-Pango
 Version:	1.221
-Release:	2
-License:	unknown
+Release:	3
+License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/T/TS/TSCH/Pango-%{version}.tar.gz
 # Source0-md5:	8d257209aa11bd6c3a2beb235c2f103f
@@ -15,6 +15,7 @@ URL:		http://search.cpan.org/dist/Pango/
 BuildRequires:	pango-devel
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	perl-Glib >= 1.220
 %if %{with tests}
 # some fonts are required, but does not really matter which ones
 BuildRequires:	fonts-TTF-bitstream-vera
@@ -22,7 +23,6 @@ BuildRequires:	perl-Cairo >= 1.000
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-ExtUtils-Depends >= 0.300
 BuildRequires:	perl-ExtUtils-PkgConfig
-BuildRequires:	perl-Glib >= 1.220
 BuildRequires:	perl-Gtk2 >= 1.220
 %endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
