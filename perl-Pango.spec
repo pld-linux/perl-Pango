@@ -16,10 +16,10 @@ BuildRequires:	pango-devel
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl-Glib >= 1.220
+BuildRequires:	perl-Cairo >= 1.000
 %if %{with tests}
 # some fonts are required, but does not really matter which ones
 BuildRequires:	fonts-TTF-bitstream-vera
-BuildRequires:	perl-Cairo >= 1.000
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-ExtUtils-Depends >= 0.300
 BuildRequires:	perl-ExtUtils-PkgConfig
