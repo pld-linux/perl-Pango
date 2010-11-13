@@ -1,5 +1,5 @@
 
-%bcond_without	tests		# do not perform "make test"
+%bcond_with	tests		# perform "make test" (requires DISPLAY)
 %include	/usr/lib/rpm/macros.perl
 
 %define	pdir	Pango
