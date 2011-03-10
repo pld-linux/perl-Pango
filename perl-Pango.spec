@@ -1,7 +1,8 @@
-
+#
+# Conditional build:
 %bcond_with	tests		# perform "make test" (requires DISPLAY)
+#
 %include	/usr/lib/rpm/macros.perl
-
 %define	pdir	Pango
 Summary:	Pango - Layout and render international text
 Name:		perl-Pango
@@ -20,10 +21,10 @@ BuildRequires:	perl-Cairo >= 1.000
 %if %{with tests}
 # some fonts are required, but does not really matter which ones
 BuildRequires:	fonts-TTF-bitstream-vera
-BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-ExtUtils-Depends >= 0.300
 BuildRequires:	perl-ExtUtils-PkgConfig
 BuildRequires:	perl-Gtk2 >= 1.220
+BuildRequires:	perl-devel >= 1:5.8.0
 %endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -51,20 +52,20 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 cp -a examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorarch}/Pango{,/Cairo}/*.pod
+rmdir $RPM_BUILD_ROOT%{perl_vendorarch}/Pango/Cairo
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS NEWS README
-%{perl_vendorarch}/%{pdir}.pm
-%dir %{perl_vendorarch}/%{pdir}
-%{perl_vendorarch}/%{pdir}/*.pod
-%dir %{perl_vendorarch}/%{pdir}/Cairo
-%{perl_vendorarch}/%{pdir}/Cairo/*pod
-%{perl_vendorarch}/%{pdir}/Install
+%{perl_vendorarch}/Pango.pm
+%dir %{perl_vendorarch}/Pango
+%{perl_vendorarch}/Pango/Install
 %dir %{perl_vendorarch}/auto/Pango
-%{perl_vendorarch}/auto/Pango/*.bs
-%attr(755,root,root) %{perl_vendorarch}/auto/%{pdir}/*.so
-%{_mandir}/man3/*
+%{perl_vendorarch}/auto/Pango/Pango.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Pango/Pango.so
+%{_mandir}/man3/Pango*.3pm*
 %{_examplesdir}/%{name}-%{version}
