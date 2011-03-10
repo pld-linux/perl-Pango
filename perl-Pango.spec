@@ -5,6 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Pango
 Summary:	Pango - Layout and render international text
+Summary(pl.UTF-8):	Pango - rozmieszczanie i renderowanie wielojęzycznego tekstu
 Name:		perl-Pango
 Version:	1.221
 Release:	4
@@ -29,7 +30,12 @@ BuildRequires:	perl-devel >= 1:5.8.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Pango - Layout and render international text
+Perl bindings to Pango library used to layout and render international
+text.
+
+%description -l pl.UTF-8
+Perlowe wiązania do biblioteki Pango służącej do rozmieszczania i
+renderowania wielojęzycznego tekstu.
 
 %prep
 %setup -q -n %{pdir}-%{version}
