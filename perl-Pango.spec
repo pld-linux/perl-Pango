@@ -7,18 +7,18 @@
 Summary:	Pango - Layout and render international text
 Summary(pl.UTF-8):	Pango - rozmieszczanie i renderowanie wielojęzycznego tekstu
 Name:		perl-Pango
-Version:	1.223
-Release:	2
+Version:	1.224
+Release:	1
 License:	LGPL v2.1+
 Group:		Development/Languages/Perl
 Source0:	http://downloads.sourceforge.net/gtk2-perl/Pango-%{version}.tar.gz
-# Source0-md5:	628a6de54f47b6791c6b45edfb835215
+# Source0-md5:	8c411f367cffb0aa16d0e3963294d32e
 URL:		http://search.cpan.org/dist/Pango/
 BuildRequires:	pango-devel >= 1:1.16
 BuildRequires:	perl-ExtUtils-Depends >= 0.300
 BuildRequires:	perl-ExtUtils-PkgConfig >= 1.03
 BuildRequires:	perl-Glib-devel >= 1.220
-BuildRequires:	perl-Cairo >= 1.000
+BuildRequires:	perl-Cairo-devel >= 1.000
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
@@ -37,6 +37,20 @@ text.
 %description -l pl.UTF-8
 Perlowe wiązania do biblioteki Pango służącej do rozmieszczania i
 renderowania wielojęzycznego tekstu.
+
+%package devel
+Summary:	Development files for Perl Pango bindings
+Summary(pl.UTF-8):	Pliki programistyczne wiązań Pango dla Perla
+Group:		Development/Languages/Perl
+Requires:	%{name} = %{version}-%{release}
+Requires:	pango-devel >= 1:1.16
+Requires:	perl-Glib-devel >= 1.220
+
+%description devel
+Development files for Perl Pango bindings.
+
+%description devel -l pl.UTF-8
+Pliki programistyczne wiązań Pango dla Perla.
 
 %prep
 %setup -q -n %{pdir}-%{version}
@@ -70,9 +84,12 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS NEWS README
 %{perl_vendorarch}/Pango.pm
 %dir %{perl_vendorarch}/Pango
-%{perl_vendorarch}/Pango/Install
 %dir %{perl_vendorarch}/auto/Pango
 %{perl_vendorarch}/auto/Pango/Pango.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Pango/Pango.so
 %{_mandir}/man3/Pango*.3pm*
 %{_examplesdir}/%{name}-%{version}
+
+%files devel
+%defattr(644,root,root,755)
+%{perl_vendorarch}/Pango/Install
