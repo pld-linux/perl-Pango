@@ -85,7 +85,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/Pango.pm
 %dir %{perl_vendorarch}/Pango
 %dir %{perl_vendorarch}/auto/Pango
-%{perl_vendorarch}/auto/Pango/Pango.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Pango/Pango.so
 %{_mandir}/man3/Pango*.3pm*
 %{_examplesdir}/%{name}-%{version}
