@@ -7,12 +7,12 @@
 Summary:	Pango - Layout and render international text
 Summary(pl.UTF-8):	Pango - rozmieszczanie i renderowanie wielojęzycznego tekstu
 Name:		perl-Pango
-Version:	1.224
-Release:	2
+Version:	1.226
+Release:	1
 License:	LGPL v2.1+
 Group:		Development/Languages/Perl
 Source0:	http://downloads.sourceforge.net/gtk2-perl/Pango-%{version}.tar.gz
-# Source0-md5:	8c411f367cffb0aa16d0e3963294d32e
+# Source0-md5:	9ff2dee3cc1d37563ea98b91a45e6ba1
 URL:		http://search.cpan.org/dist/Pango/
 BuildRequires:	pango-devel >= 1:1.16
 BuildRequires:	perl-ExtUtils-Depends >= 0.300
